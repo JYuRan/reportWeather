@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="apple.orange.mapper.WeatherMapper">
+
+<select id="selectArea" resultType="apple.orange.domain.WeatherRequestDTO" parameterType="Map">
+		<choose>
+			<when test="type == 'city'">
+			SELECT 	doName, step1 
+			FROM  Weather  
+			WHERE step2 = '' 
+			ORDER BY step1;
+			</when>
+
+		</choose>
+	</select>
+
+</mapper>
